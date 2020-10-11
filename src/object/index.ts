@@ -1,4 +1,4 @@
-const getAppraisal = (grade) => {
+const getAppraisal = (grade: any) => {
   const GRADE = {
     A: [90, 100],
     B: [75, 89],

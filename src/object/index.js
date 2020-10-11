@@ -1,10 +1,11 @@
+"use strict";
 var getAppraisal = function (grade) {
     var GRADE = {
         A: [90, 100],
         B: [75, 89],
         C: [60, 74],
         D: [40, 59],
-        E: [0, 39]
+        E: [0, 39],
     };
     if (typeof grade === 'number') {
         for (var _i = 0, _a = Object.entries(GRADE); _i < _a.length; _i++) {

@@ -8,7 +8,7 @@ const isEven = (num: number) => {
         else
             return false;
     } else {
-        let m = num_t === 'undefined' ? num_t : `${num} (${num_t})`
+        const m = num_t === 'undefined' ? num_t : `${num} (${num_t})`
         return `expect number but received ${m}`;
     }
 };

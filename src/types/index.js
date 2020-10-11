@@ -1,3 +1,4 @@
+"use strict";
 //  check value is not number return true
 //  if value is number return false
 function add(n1, n2) {

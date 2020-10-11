@@ -1,3 +1,4 @@
+"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -27,7 +28,7 @@ var checkArray = function (array, val) {
         return {
             greater: greater,
             less: less,
-            equal: equal
+            equal: equal,
         };
     }
     throw new Error('param 1 should be an array');
@@ -74,7 +75,7 @@ var copyArray = function (array) {
 var countBoysAndGirls = function (array) {
     var obj = {
         boys: 0,
-        girls: 0
+        girls: 0,
     };
     if (array.length > 0) {
         for (var _i = 0, array_4 = array; _i < array_4.length; _i++) {
@@ -89,15 +90,15 @@ var countBoysAndGirls = function (array) {
 };
 var editItemInArray = function (array, i, obj) {
     var index = i - 1;
-    var keys = Object.keys(obj);
     if (array.length > 0) {
         var updatedArray = array.map(function (o, n) {
             if (n === index) {
-                var updatedObj_1 = __assign({}, o);
-                keys.forEach(function (x) {
-                    updatedObj_1[x] = obj[x];
-                });
-                return updatedObj_1;
+                var updatedObj = __assign({}, o);
+                for (var _i = 0, _a = Object.entries(obj); _i < _a.length; _i++) {
+                    var _b = _a[_i], index_1 = _b[0], value = _b[1];
+                    updatedObj[index_1] = obj[index_1];
+                }
+                return updatedObj;
             }
             else {
                 return o;

@@ -73,19 +73,18 @@ const countBoysAndGirls = (array: { name: string; gender: string }[]) => {
 };
 
 const editItemInArray = (
-  array: { id: number; name: string; gender: string }[],
+  array: { id: number; name: string; gender: string; [key: string]: string | number | undefined}[],
   i: number,
-  obj: { id?: number; name?: string; gender?: string },
+  obj: { id?: number; name?: string; gender?: string; [key: string]: string | number | undefined},
 ) => {
-  let index = i - 1;
-  const keys = Object.keys(obj);
+  const index = i - 1;
   if (array.length > 0) {
     const updatedArray = array.map((o, n) => {
       if (n === index) {
         const updatedObj = { ...o };
-        keys.forEach((x) => {
-          updatedObj[x] = obj[x];
-        });
+        for (const [index, value] of Object.entries(obj)) {
+          updatedObj[index] = obj[index];
+        }
         return updatedObj;
       } else {
         return o;

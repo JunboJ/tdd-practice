@@ -8,17 +8,17 @@ function add(n1: number, n2: number) {
     const result = n1 + n2;
     return result;
   } else {
-    let string: string[] = [];
+    const string: string[] = [];
     if (n1_t !== 'number') {
-      let s = n1_t === 'string' ? `"${n1}" (${n1_t})` : `${n1} (${n1_t})`
+      const s = n1_t === 'string' ? `"${n1}" (${n1_t})` : `${n1} (${n1_t})`
       string.push(s);
     }
     if (n2_t !== 'number') {
       if (string.length > 0) string.push('and');
-      let s = n2_t === 'string' ? `"${n2}" (${n2_t})` : `${n2} (${n2_t})`
+      const s = n2_t === 'string' ? `"${n2}" (${n2_t})` : `${n2} (${n2_t})`
       string.push(s);
     }
-    let message = `expect: number, but received: ${string.join(' ')}`;
+    const message = `expect: number, but received: ${string.join(' ')}`;
     return message;
   }
 }

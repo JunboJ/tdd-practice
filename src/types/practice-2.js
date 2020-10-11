@@ -1,3 +1,4 @@
+"use strict";
 /* eslint-disable no-confusing-arrow,implicit-arrow-linebreak */
 var isEven = function (num) {
     var num_t = typeof num;
